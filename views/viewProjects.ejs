@@ -1,0 +1,19 @@
+<div>
+  <h1>User's Goals</h1> 
+  <br/>
+  <br/>
+  <% projects.forEach(project =>{ %>
+   <div>
+    <%= project.name%>
+   </div>
+   <p>
+    Start Date: <%= project.startDate %>
+   </p>
+   <% project.milestones.forEach((milestone, i) => { %>
+    <div>
+     Goal #<%= i+1 %>: <%= milestone.name %> - Start Date:<%= milestone.startDate %> - End Date: <%= milestone.endDate %>
+    </div>
+  <% }) %>
+  <%  }) %>
+</div>
+
