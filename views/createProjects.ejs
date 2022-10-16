@@ -1,0 +1,31 @@
+<div>
+  <!-- We will focus on integrating webpack with ejs so it isn't just sitting in package.json for nothing same for  -->
+  <h1>Create a new project here</h1>
+  <form action="/new-project" method="POST">
+    <label for="name">
+      Project Name:
+    </label>
+    <input type="text" name="name" id="name"/>
+    <br/>
+    <label for="start-date">
+      Project Start Date:
+    </label>
+    <input type="date" name="start-date" id="start-date"/>
+    <br/>
+    <label for="project-name">
+      Project End Date:
+    </label>
+    <input type="date" name="end-date" id="end-date"/>
+    <br/>
+    <label for="milestones">
+      Project milestones
+    </label>
+    <br/>
+    <textarea cols="30" rows="30" id="milestones" name="milestones">
+    </textarea>
+    <br/>
+    <button>
+      Submit
+    </button>
+  </form>
+</div>

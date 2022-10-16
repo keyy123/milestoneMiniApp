@@ -3,17 +3,27 @@
   <br/>
   <br/>
   <% projects.forEach(project =>{ %>
-   <div>
-    <%= project.name%>
-   </div>
-   <p>
-    Start Date: <%= project.startDate %>
-   </p>
-   <% project.milestones.forEach((milestone, i) => { %>
-    <div>
-     Goal #<%= i+1 %>: <%= milestone.name %> - Start Date:<%= milestone.startDate %> - End Date: <%= milestone.endDate %>
+   <div style="border:1px solid black; border-radius: 8px; background-color: yellow;">
+    <h2>
+      <%= project.name%>
+    </h2>
+    <p>
+      Start Date: <%= project.startDate %>
+    </p>
+    <% project.milestones.forEach((milestone, i) => { %>
+      <div>
+       <p>Goal #<%= i+1 %>: <%= milestone.name %></p>
+        <p>
+          Start Date:<%= milestone.startDate %> - End Date: <%= milestone.endDate %>
+        </p>
+        <button>Delete</button>
+        <button>Edit Project</button>
+      </div>
+      <% }) %>
     </div>
-  <% }) %>
   <%  }) %>
+
+  <a href="/new-project">Create a new project!</a>
+  <a href="/work-on-project">Work on a project!</a>
 </div>
 
