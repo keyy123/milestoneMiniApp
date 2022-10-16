@@ -17,7 +17,7 @@ app.locals.projects = projects
 
 app.get("/", (req, res) => {
   res.render("viewProjects")
-});
+}); 
 
 app.get("/new-project", (req, res) => {
   res.render("createProjects")
