@@ -1,0 +1,30 @@
+<div>
+    <p>What Projects To Work On?</p>
+
+    
+    <form action="/work-on-project" method="post">
+    <fieldset>
+        <legend>Choose the task you want to work on!</legend>
+    <div>
+        <% projects.forEach((project,idx) => { %>
+            <input type="radio" name="projects" value=<%= project.name %> id="projects-"+<%= project.idx %> >
+            <label for=<%= project.name %> ><%= project.name %></label>   
+            <br/>
+        <% }) %>
+     </div>
+     <br/>
+        <legend>
+            How many rounds do you want to do?
+        </legend>
+        <label for="study-rounds">
+            # of Study Rounds:
+        </label>
+        <input type="text" id="study-rounds" name="study-rounds">      
+        </input>
+        <br/>
+        <button>
+            Set Time
+        </button>
+    </fieldset>
+</form>
+</div>

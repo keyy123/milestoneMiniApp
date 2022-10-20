@@ -4,7 +4,7 @@
   "description": "My webpack project",
   "main": "index.js",
   "scripts": {
-    "codeCheck":"eslint",
+    "codeCheck": "eslint",
     "test": "jest --watch --verbose",
     "webpack": "webpack",
     "debugthis": "node --inspect --inspect-brk ./",
@@ -26,6 +26,7 @@
     "nodemon": "^2.0.20",
     "prettier": "^2.7.1",
     "style-loader": "^3.3.1",
+    "supertest": "^6.3.0",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.1"
