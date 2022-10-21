@@ -2,7 +2,7 @@
   <h1>User's Goals</h1> 
   <br/>
   <br/>
-  <% projects.forEach(project =>{ %>
+  <% projects.forEach((project, pidx) =>{ %>
    <div style="border:1px solid black; border-radius: 8px; background-color: yellow;">
     <h2>
       <%= project.name%>
@@ -10,13 +10,13 @@
     <p>
       Start Date: <%= project.startDate %>
     </p>
-    <% project.milestones.forEach((milestone, i) => { %> 
+    <% project.milestones.map((milestone) => { %> 
       <div>
-       <p>Goal #<%= i+1 %>: <%= milestone.name %></p>
+     <p>Goal #<%= pidx + 1 %>: <%= milestone.name %></p> 
         <p>
           Start Date:<%= milestone.startDate %> - End Date: <%= milestone.endDate %>
         </p>
-        <button>Delete</button>
+        <button id="<%= pidx %>"  class="delete-btn" data-action="delete" >Delete</button>
         <button>Edit Project</button>
       </div>
       <% }) %>
@@ -27,4 +27,28 @@
   <a href="/new-project">Create a new project!</a>
   <a href="/work-on-project">Work on a project!</a>
 </div>
+<script>
+    // document.body.addEventListener("click", (e)=>{
+    //     console.log(e.target)
+    // })
 
+    const deleteBtns = document.getElementsByClassName("delete-btn");
+    console.log(deleteBtns);
+
+    Array.prototype.map.call(
+        deleteBtns,
+        (deleteBtn) => {
+            deleteBtn.addEventListener("click", ()=>{
+                let confirmDeletion;
+                if(confirm("Are you sure? Once it's gone it's gone forever...")){
+                      confirmDeletion = true;
+                }else{
+                    confirmDeletion = false;
+                }
+                if(confirmDeletion){
+                    console.log("deleted");
+                }
+            })
+        }
+    )
+</script>
